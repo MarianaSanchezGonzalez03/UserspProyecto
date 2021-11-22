@@ -1,4 +1,4 @@
-package com.cursosant.android.usersp
+package com.cursosant.android.userssp
 
 /****
  * Project: Fundamentos Kotlin
@@ -10,6 +10,6 @@ package com.cursosant.android.usersp
  * All my Courses(Only  on Udemy ):
  * https://www.udemy.com/user/alain-nicolas-tello/
  ****/
-data class User (val id: long, var name:String, var lastName: String,  var url:String){
+data class  User  (val id: long, var name:String, var lastName: String,  var url:String){
 
 }
