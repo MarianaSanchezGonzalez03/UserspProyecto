@@ -25,4 +25,15 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun getUser(): MutableList<Users>{
+        val users= mutableListOf<User>()
+
+        val alain= User(id: 1, name:"Alain", lastName:"Nicolas", url: "")
+        val samanta= User(id: 2, name:"Samanta", lastName:"Meza", url: "")
+     users.add(alain)
+        users.add(samanta)
+        return  users
+
+    }
 }
