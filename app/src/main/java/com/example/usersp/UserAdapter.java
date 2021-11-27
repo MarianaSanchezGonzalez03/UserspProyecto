@@ -32,7 +32,7 @@ contex= parent.context
          with(holder){
             this:UserAdapter.ViewHolder
         binding.tvOrder.text=(position + 1).toString()
-        binding.tvName.text= user.name
+        binding.tvName.text= user.getFullName()
         Glide.with(contex)
         .load(user.url)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -46,7 +46,7 @@ contex= parent.context
 
 
 
- inner class ViewHolder<view>(view: View): RecyclerView.ViewHolder(View){
+ inner : RecyclerView.ViewHolder(View){
      val binding = ItemUserBinding.bind(View)
     }
 }

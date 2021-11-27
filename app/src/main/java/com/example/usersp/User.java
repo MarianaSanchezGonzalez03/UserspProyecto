@@ -10,6 +10,7 @@ package com.cursosant.android.userssp
  * All my Courses(Only  on Udemy ):
  * https://www.udemy.com/user/alain-nicolas-tello/
  ****/
-data class  User  (val id:int, var name:String, var lastName: String,  var url:String){
-
+data class  User  (
+        id:int, var name:String, var lastName: String,  var url:String){
+fun     getFulName(): String= "$name $las"
 }
