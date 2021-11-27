@@ -4,6 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cursosant.android.userssp.databinding.ItemUserBinding
+import com.example.usersp.val;
 
 import java.nio.file.attribute.UserPrincipal;
 
@@ -30,13 +31,22 @@ contex= parent.context
 
          with(holder){
             this:UserAdapter.ViewHolder
-        binding.tvOrder.tex=user.id.toString()
+        binding.tvOrder.text=(position + 1).toString()
         binding.tvName.text= user.name
+        Glide.with(contex)
+        .load(user.url)
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+        .centerCrop()
+        .centerCrop
+        .circleCrop
+        .into(binding.imgPhoto)
         }
         }
         override fun getItemcount(): Int = user.size
 
- inner class ViewHolder(view: View): RecyclerView.ViewHolder(View){
+
+
+ inner class ViewHolder<view>(view: View): RecyclerView.ViewHolder(View){
      val binding = ItemUserBinding.bind(View)
     }
 }
