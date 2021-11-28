@@ -5,4 +5,6 @@
     <string name="sp_first_time">firsttime</string>
     <string name="dialog_tittle">Registro de usuario</string>
     <string name="dialog_confirm">Registrar</string>
+    <string name="helper_username">Valores</string>
+    <string name="hint_username">Registro de nombre</string>
 </resources>
