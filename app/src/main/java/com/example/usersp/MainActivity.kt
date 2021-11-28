@@ -1,9 +1,11 @@
 package com.example.usersp
 
 import android.app.Activity
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.View.inflate
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,8 +22,13 @@ private lateinit var  binding: ActivityMainBinding
         binding= ActivityMainBinding.inflate(layoutInflater
             setContentView(binding.root)
 
-            userAdapter=UserAdapter(getUsers(), listener:this)
-            linearLayoutManager= LinearLayoutManager(context: this)
+                val preferences = getPreferences(Context.MODE_PRIVATE)
+
+                val isFirstTime=preferences.getBoolean(getString(R.string.sp_first_time), true)
+        Log.i("SP", "${getString(R.string.sp_first_time)}=$isFirstTime")
+
+            userAdapter=UserAdapter(getUsers(), this)
+            linearLayoutManager= LinearLayoutManager(this)
 
         binding.recyclerView.apply{
             setHasFixedSize(true)
