@@ -2,6 +2,7 @@ package com.example.usersp
 
 import android.app.Activity
 import android.content.Context
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -10,6 +11,7 @@ import android.view.View.inflate
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.text.FieldPosition
 
 class MainActivity : AppCompatActivity(), OnClickListener {
@@ -26,8 +28,17 @@ private lateinit var  binding: ActivityMainBinding
 
                 val isFirstTime=preferences.getBoolean(getString(R.string.sp_first_time), true)
         Log.i("SP", "${getString(R.string.sp_first_time)}=$isFirstTime")
-        preferences.edit().putBoolean(getString(R.string.sp_first_time), false).commit()
+        if(isFirstTime) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.dialog_tittle)
+                .setPositiveButton(R.string.dialog_confirm, {dialogInterface, i
+                    preferences.edit().putBoolean(getString(R.string.sp_first_time), false).commit()})
+                .setNegativeButton("cancelar", null)
 
+            .show()
+
+
+        }
             userAdapter=UserAdapter(getUsers(), this)
             linearLayoutManager= LinearLayoutManager(this)
 

@@ -3,4 +3,6 @@
     <string name="desciption_user_photo">imagen del ususario</string>
     <string name="description_user_photo">imagen del ususario</string>
     <string name="sp_first_time">firsttime</string>
+    <string name="dialog_tittle">Registro de usuario</string>
+    <string name="dialog_confirm">Registrar</string>
 </resources>
