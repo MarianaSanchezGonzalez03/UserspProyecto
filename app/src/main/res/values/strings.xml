@@ -7,4 +7,5 @@
     <string name="dialog_confirm">Registrar</string>
     <string name="helper_username">Valores</string>
     <string name="hint_username">Registro de nombre</string>
+    <string name="sp_username">variable</string>
 </resources>
